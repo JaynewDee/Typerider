@@ -24,20 +24,21 @@ input:active {
 .letter-field {
   width: 50%;
   border: none;
-  background: rgba(0, 121, 145, 1);
+  background: rgba(0, 121, 145, 0.33);
   margin: 0.3rem;
-  color: rgba(0, 121, 145, 1);
+  color: rgba(0, 121, 145, 0);
+  z-index: -3;
 }
 .space-field {
   width: 50%;
   border: none;
-  background: rgba(242, 227, 188, 0.6);
+  background: rgba(242, 227, 188, 0.11);
   margin: 0.3rem;
 }
 .solved {
   width: 50%;
   border: none;
-  background: rgba(36, 79, 38, 1);
+  background: rgba(36, 79, 38, 0.7);
   margin: 0.3rem;
   color: white;
 }

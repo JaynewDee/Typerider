@@ -20,7 +20,6 @@ const Window: React.FC = () => {
     const getSentence = () => {
       if (round > 0) {
         fetchSentence(publicUrl, round).then((sentence: string) => {
-          console.log(sentence);
           let scrambled = scrambleWords(sentence);
           let words = sentence.split(" ");
           let formatted = withSpaces(words);
@@ -48,7 +47,7 @@ const Window: React.FC = () => {
   }, [round]);
 
   return (
-    <div>
+    <div className="board-box">
       <Main sentence={sentence} round={round} setRound={setRound} />
     </div>
   );

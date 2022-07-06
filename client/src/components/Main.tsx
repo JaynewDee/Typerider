@@ -6,6 +6,8 @@ import { KeyBoard } from "./Keyboard/KeyBoard";
 import { Victory } from "./Victory/Victory";
 import { Menu } from "./Menu/Menu";
 import ExitBtn from "./Menu/ExitBtn";
+import StatusBar from "./StatusBar/StatusBar";
+import { useScoreReducer } from "../utils/reducers";
 
 interface MainDisplayProps {
   sentence: {
@@ -17,7 +19,13 @@ interface MainDisplayProps {
   round: number;
   setRound: Dispatch<SetStateAction<any>>;
 }
-const Switch = (sentence: any, round: number, setRound: any) => {
+const Switch = (
+  sentence: any,
+  round: number,
+  setRound: any,
+  score: number,
+  scoreDispatch: any
+) => {
   if (round === 0) {
     return <Menu setRound={setRound} />;
   }
@@ -27,7 +35,8 @@ const Switch = (sentence: any, round: number, setRound: any) => {
     if (round > 0 && round < 11) {
       return (
         <>
-          <Header score={round - 1} sentence={sentence} />
+          <StatusBar score={score} />
+          <Header sentence={sentence} />
           <KeyBoard sentence={sentence} setRound={setRound} round={round} />
           <ExitBtn setRound={setRound} />
         </>
@@ -43,7 +52,8 @@ const Main: React.FC<MainDisplayProps> = ({
   round,
   setRound,
 }): ReactElement => {
-  return Switch(sentence, round, setRound);
+  const [score, scoreDispatch] = useScoreReducer(0);
+  return Switch(sentence, round, setRound, score, scoreDispatch);
 };
 
 export { Main };

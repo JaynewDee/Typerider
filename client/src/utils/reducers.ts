@@ -1,4 +1,5 @@
-import { PENALTY, INCREASE } from "./actions";
+import { useReducer } from "react";
+import { PENALTY, INCREASE, INCREMENT } from "./actions";
 
 const scoreReducer = (state: any, { type, payload }: any) => {
   switch (type) {
@@ -19,4 +20,18 @@ const scoreReducer = (state: any, { type, payload }: any) => {
   }
 };
 
-export { scoreReducer };
+const timerReducer = (state: any, { type }: any) => {
+  switch (type) {
+    case INCREMENT: {
+      const newTime = state.time + 1;
+      return {
+        time: newTime,
+      };
+    }
+  }
+};
+
+export { timerReducer };
+export function useScoreReducer(initialState: number) {
+  return useReducer(scoreReducer, initialState);
+}
