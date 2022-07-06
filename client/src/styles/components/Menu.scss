@@ -1,0 +1,18 @@
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  width: 33%;
+  height: 33%;
+  margin: auto;
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+
+.menu-header {
+  color: white;
+}
+.start-btn {
+  border-radius: 10px;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "remix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "concurrently \"cd server && npm install\" \"cd client && npm install\"",
+    "dev": "concurrently \"cd server && npm run watch \" \"cd client && npm start\"",
+    "seed": "cd server && npm run seed"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.18"
+  }
+}

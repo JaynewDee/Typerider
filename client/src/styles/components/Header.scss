@@ -1,0 +1,25 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  letter-spacing: 0.2rem;
+  margin: auto;
+}
+header > * {
+  padding-bottom: 1rem;
+}
+header > h1 {
+  color: white;
+  font-size: 2rem;
+  // padding-bottom: 1rem;
+}
+header > h4 {
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+.score {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
