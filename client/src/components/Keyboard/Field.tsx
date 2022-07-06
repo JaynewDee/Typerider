@@ -15,8 +15,6 @@ const Field: React.FC<FieldProps> = ({
     let nextRow = document.getElementById(`${0},${rowIdx + 1}`);
     if (e.key === current.value) {
       current.className = "solved";
-      console.log(current.nextSibling);
-      console.log(nextRow);
       if (current.nextSibling === null && nextRow === null && round < 11) {
         setRound(round + 1);
       } else if (current.nextSibling === null) {

@@ -16,4 +16,4 @@ const Menu: React.FC<MenuProps> = ({ setRound }) => {
   );
 };
 
-export default Menu;
+export { Menu };

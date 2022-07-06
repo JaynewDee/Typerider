@@ -4,7 +4,7 @@ const Score = ({ score }: { score: number }) => {
   const [scoreState, scoreDispatch] = useReducer(scoreReducer, {});
   return (
     <h4 className="score">
-      Score: <data>{score}</data>
+      <data>{score}</data>
     </h4>
   );
 };

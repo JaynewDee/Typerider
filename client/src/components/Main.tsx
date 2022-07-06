@@ -4,7 +4,7 @@ import { Loading } from "./Loading";
 import { Header } from "./Header/Header";
 import { KeyBoard } from "./Keyboard/KeyBoard";
 import { Victory } from "./Victory/Victory";
-import Menu from "./Menu/Menu";
+import { Menu } from "./Menu/Menu";
 import ExitBtn from "./Menu/ExitBtn";
 
 interface MainDisplayProps {

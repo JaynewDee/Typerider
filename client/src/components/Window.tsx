@@ -1,6 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { fetchSentence } from "../api/fetch";
-import { getOneSentence } from "../utils/dbAPI/sentence";
 import { scrambleWords } from "../utils/scramble";
 import { withSpaces } from "../utils/withSpaces";
 import { SentenceState } from "./types";
@@ -15,14 +14,6 @@ const Window: React.FC = () => {
     scrambled: "",
     loading: true,
     words: [],
-  });
-
-  useEffect(() => {
-    getOneSentence()
-      .then(async (response) => {
-        console.log(response);
-      })
-      .then((data) => console.log(data));
   });
 
   useMemo((): void => {
