@@ -9,14 +9,14 @@ const ExitBtn: React.FC<ExitBtnProps> = ({ setRound }) => {
     setRound(0);
   };
   return (
-    <div>
+    <div className="btn-box">
       <button
         className="exit-btn"
         onClick={(e) => {
           handleExit(e);
         }}
       >
-        QUIT
+        X
       </button>
     </div>
   );

@@ -4,6 +4,7 @@ export interface BoardProps {
   sentence: any;
   round: number;
   setRound: any;
+  scoreDispatch: any;
 }
 
 export interface RowProps {
@@ -13,6 +14,7 @@ export interface RowProps {
   rowIdx: number;
   round: number;
   setRound: Dispatch<SetStateAction<number>>;
+  scoreDispatch: any;
 }
 
 export interface FieldProps {
@@ -23,6 +25,7 @@ export interface FieldProps {
   className: string;
   round: number;
   setRound: Dispatch<SetStateAction<number>>;
+  scoreDispatch: any;
 }
 
 export interface FocusState {

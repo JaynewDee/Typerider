@@ -1,7 +1,7 @@
-import React, { useReducer } from "react";
+import React, { useState } from "react";
 
-const Score = ({ score }: { score: number }) => {
-  return <span className="score">{score}</span>;
+const Score = ({ score }: { score: { score: number } }) => {
+  return <span className="score">Score: {score.score}</span>;
 };
 
 export { Score };

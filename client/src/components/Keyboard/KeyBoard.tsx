@@ -1,9 +1,13 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import { Row } from "./Row";
-import { EnterBtn } from "./EnterBtn";
 import { BoardProps } from "./types";
 
-const KeyBoard: React.FC<BoardProps> = ({ sentence, setRound, round }) => {
+const KeyBoard: React.FC<BoardProps> = ({
+  sentence,
+  setRound,
+  round,
+  scoreDispatch,
+}) => {
   return (
     <>
       <form key={sentence.words.at(0)} className="keyboard">
@@ -17,6 +21,7 @@ const KeyBoard: React.FC<BoardProps> = ({ sentence, setRound, round }) => {
               id={word}
               key={idx + 50}
               word={[...word]}
+              scoreDispatch={scoreDispatch}
             />
           );
         })}
@@ -25,4 +30,4 @@ const KeyBoard: React.FC<BoardProps> = ({ sentence, setRound, round }) => {
   );
 };
 
-export { KeyBoard };
+export default React.memo(KeyBoard);
