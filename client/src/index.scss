@@ -1,4 +1,5 @@
 @use "./styles/components/Loading.scss";
+@use "./styles/components/StatusBar.scss";
 @use "./styles/components/Header.scss";
 @use "./styles/components/Keyboard.scss";
 @use "./styles/components//Menu.scss";
@@ -21,7 +22,7 @@ code {
 
 // global
 $font-main: "Open Sans", sans-serif;
-$bg: rgba(15, 15, 15, 0.75);
+$bg: rgba(15, 15, 15, 0.6);
 $correct: #4caf50;
 $space: #ffb74d;
 $btn: #388e3c;
@@ -39,4 +40,8 @@ body {
   box-sizing: border-box;
   font-family: $font-main;
   border-radius: 2%;
+  filter: drop-shadow(0px 0px 15px rgba(25, 25, 25, 0.9));
+}
+.board-box {
+  margin-top: 1rem;
 }

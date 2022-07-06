@@ -1,0 +1,16 @@
+.status-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100vw;
+  color: white;
+}
+
+.score {
+  font-size: 1.5rem;
+  padding: 0.33rem;
+}
+
+.timer {
+  font-size: 1.5rem;
+  padding: 0.33rem;
+}
