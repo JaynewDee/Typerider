@@ -4,7 +4,7 @@ I lack the confidence in those techniques to know for sure if I am implementing 
 The decision to implement TypeScript, too, was related to the decision to attempt a relatively test-centered approach.
 It has been a joy to understand further by experiencing the helpfulness of these awesome technologies.
 I do feel that TS's readability suffers sometimes, or maybe I am bad at this and should not have used imperative DOM selectors on the document.
-I tried a number of different strategies for control focus state, and it was tough in all directions ... having never manipulated focus on elements before.
+I tried a number of different strategies for controlling focus state, and it was tough in all directions ... having never manipulated focus on elements before.
 
 I wanted also to challenge myself to implement meaningful version control.
 Again, I'm not entirely certain what this looks like in a career production mode, I'm only certain that it is an essential skill.
