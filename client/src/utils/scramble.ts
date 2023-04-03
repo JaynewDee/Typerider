@@ -30,7 +30,6 @@ function rejoinWords(newStrings: string[], inserts: Insert[]) {
   return pieces;
 }
 
-// main control flow
 const scrambleWords = (sentence: string): string => {
   const shorts: Insert[] = [];
   let wordArray = sentence.split(" ").slice(0, 10);

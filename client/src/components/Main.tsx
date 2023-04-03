@@ -15,6 +15,7 @@ interface MainDisplayProps {
   round: number;
   setRound: Dispatch<SetStateAction<any>>;
 }
+
 const Switch = (
   sentence: any,
   round: number,
@@ -48,7 +49,7 @@ const Main: React.FC<MainDisplayProps> = ({
   sentence,
   round,
   scoreDispatch,
-  setRound,
+  setRound
 }): ReactElement => {
   return Switch(sentence, round, setRound, scoreDispatch);
 };

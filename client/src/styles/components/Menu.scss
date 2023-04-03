@@ -8,8 +8,8 @@
   margin: auto;
   padding-top: 7%;
   padding-bottom: 7%;
+  font-family: "Syne Mono", monospace;
 }
-
 .menu-header {
   color: white;
 }
@@ -21,8 +21,10 @@
   padding: 0.33rem 0.66rem;
 }
 .mode-label {
-  margin-top: 3rem;
   color: white;
+  margin-top: 0;
+  padding-top: 1rem;
+  padding-left: 3rem;
 }
 .mode-name {
   color: rgba(0, 121, 145, 0.9);

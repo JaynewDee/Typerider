@@ -12,8 +12,6 @@ const Row: React.FC<RowProps> = ({
   scoreDispatch,
 }) => {
   //
-  //
-
   return (
     <section
       onChange={(e) => {

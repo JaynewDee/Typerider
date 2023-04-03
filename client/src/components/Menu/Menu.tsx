@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MenuProps } from "./types";
-const Menu: React.FC<MenuProps> = ({ setRound, mode, setMode }) => {
+
+const Menu: React.FC<MenuProps> = ({ setRound, setMode }) => {
   const [menuState, setMenuState] = useState("main");
   const handleStart = (e: any) => {
     e.preventDefault();
@@ -20,77 +21,40 @@ const Menu: React.FC<MenuProps> = ({ setRound, mode, setMode }) => {
     setMenuState("main");
   };
 
-  const handleQuit = (e: any) => {
-    e.preventDefault();
-    window.close();
-  };
+  const MainMenu = (start: (e: any) => void, selection: (e: any) => void) => (
+    <>
+      <button className="start-btn" onClick={(e) => start(e)}>
+        START
+      </button>
+      <button value="mode" className="mode-btn" onClick={(e) => selection(e)}>
+        GAME MODE
+      </button>
+    </>
+  );
+
+  const ModeMenu = (setMode: (e: any) => void) => (
+    <>
+      <button value="dictionary" onClick={setMode} className="mode-btn">
+        STANDARD
+      </button>
+      <button value="hipster" onClick={setMode} className="mode-btn">
+        HIPSTER
+      </button>
+      <button value="dinosaur" onClick={setMode} className="mode-btn">
+        DINOSAUR
+      </button>
+    </>
+  );
 
   const menuSwitch = (menuState: string) => {
     switch (menuState) {
       case "main":
-        return (
-          <>
-            <button className="start-btn" onClick={(e) => handleStart(e)}>
-              START
-            </button>
-            <button
-              value="mode"
-              className="mode-btn"
-              onClick={(e) => handleSelection(e)}
-            >
-              GAME MODE
-            </button>
-            <button className="quit-btn" onClick={handleQuit}>
-              QUIT
-            </button>
-          </>
-        );
+        return MainMenu(handleStart, handleSelection);
       case "mode":
-        return (
-          <>
-            <button
-              value="default"
-              onClick={handleModeSet}
-              className="mode-btn"
-            >
-              DEFAULT
-            </button>
-            <button
-              value="dictionary"
-              onClick={handleModeSet}
-              className="mode-btn"
-            >
-              DICTIONARY
-            </button>
-            <button
-              value="hipster"
-              onClick={handleModeSet}
-              className="mode-btn"
-            >
-              HIPSTER
-            </button>
-            <button
-              value="dinosaur"
-              onClick={handleModeSet}
-              className="mode-btn"
-            >
-              DINOSAUR
-            </button>
-            <button value="mongo" onClick={handleModeSet} className="mode-btn">
-              MONGO
-            </button>
-          </>
-        );
+        return ModeMenu(handleModeSet);
     }
   };
-  return (
-    <div className="menu-container">
-      {menuSwitch(menuState)}
-      <h5 className="mode-label">
-        Mode: <span className="mode-name">{mode.toUpperCase()}</span>
-      </h5>
-    </div>
-  );
+  return <div className="menu-container">{menuSwitch(menuState)}</div>;
 };
 
 export { Menu };

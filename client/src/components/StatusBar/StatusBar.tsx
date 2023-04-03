@@ -16,7 +16,6 @@ const StatusBar: React.FC<StatusBarProps> = ({ score, setRound }) => {
       </h4>
       <div className="status-bar">
         <Timer />
-
         <Score score={score} />
       </div>
     </>

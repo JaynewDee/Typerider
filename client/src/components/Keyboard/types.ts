@@ -3,7 +3,7 @@ import { Dispatch, MutableRefObject, RefObject, SetStateAction } from "react";
 export interface BoardProps {
   sentence: any;
   round: number;
-  setRound: any;
+  setRound: Dispatch<SetStateAction<number>>;
   scoreDispatch: any;
 }
 
@@ -38,7 +38,7 @@ export interface LetterProps {
 
 export interface BtnProps {
   round: number;
-  setRound: any;
+  setRound: Dispatch<SetStateAction<number>>;
   setSolved: any;
   solved: boolean;
 }

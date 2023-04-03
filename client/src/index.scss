@@ -6,6 +6,7 @@
 @use "./styles/components//Footer.scss";
 @import "./styles/reset.scss";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
 
 body {
   margin: 0;
@@ -22,7 +23,7 @@ code {
 }
 
 // global
-$font-main: "Open Sans", sans-serif;
+$font-main: "Syne Mono", monospace;
 $bg: rgba(15, 15, 15, 0.6);
 $correct: #4caf50;
 $space: #ffb74d;

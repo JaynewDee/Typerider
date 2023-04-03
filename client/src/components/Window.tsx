@@ -1,11 +1,4 @@
 import React, { useState, useMemo, useEffect } from "react";
-import {
-  fetchSentence,
-  fetchDino,
-  fetchHipsum,
-  getOneSentence,
-  getDictionary,
-} from "../api/fetch";
 import { scrambleWords } from "../utils/scramble";
 import { withSpaces } from "../utils/withSpaces";
 import { SentenceState } from "./types";
@@ -13,8 +6,6 @@ import { Main } from "./Main";
 import StatusBar from "./StatusBar/StatusBar";
 import { Menu } from "./Menu/Menu";
 import { useScoreReducer } from "../utils/reducers";
-
-const publicUrl = `https://api.hatchways.io/assessment/sentences/`;
 
 const dictionaryArray = [
   "rapture",
@@ -26,8 +17,9 @@ const dictionaryArray = [
   "autumn",
   "terrain",
   "subterfuge",
-  "apoptosis",
+  "apoptosis"
 ];
+
 const Window: React.FC = () => {
   const [round, setRound] = useState(0);
   const [mode, setMode] = useState("default");
@@ -36,7 +28,7 @@ const Window: React.FC = () => {
     solution: "",
     scrambled: "",
     loading: true,
-    words: [],
+    words: []
   });
 
   const minimize = (string: string) => {
@@ -46,59 +38,40 @@ const Window: React.FC = () => {
     return shortenedArray;
   };
 
-  const fetchByMode = (mode: string): any => {
-    switch (mode) {
-      case "default":
-        return fetchSentence(publicUrl, round);
-      case "dictionary":
-        return getDictionary(dictionaryArray[round]);
-      case "dinosaur":
-        return fetchDino();
-      case "hipster":
-        return fetchHipsum();
-      case "mongo":
-        return getOneSentence().then((response) => response[0].sentence);
-      default:
-        break;
-    }
-  };
-
-  getDictionary("melancholy");
-
   useMemo((): void => {
+    if (round === 10) return;
     const getSentence = () => {
-      if (round > 0 && round < 11) {
-        fetchByMode(mode).then((sentence: string) => {
-          console.log(sentence);
-          let scrambled = scrambleWords(sentence);
-          const solution = minimize(sentence);
-          let formatted = withSpaces(solution);
-          setSentence({
-            solution: sentence,
-            scrambled: scrambled,
-            loading: false,
-            words: formatted,
-          });
-        });
-      }
+      const current = dictionaryArray[round];
+      const scrambled = scrambleWords(current);
+      const solution = minimize(current);
+      const formatted = withSpaces(solution);
+
+      setSentence({
+        solution: current,
+        scrambled: scrambled,
+        loading: false,
+        words: formatted
+      });
     };
+
     getSentence();
   }, [round]);
 
   useEffect(() => {
     setTimeout(() => {
-      let focusField = document.getElementById(`0,0`);
-      focusField?.focus();
-      if (round === 11) {
-        setRound(0);
-        window.addEventListener("keydown", (e) => {});
+      if (round === 10) {
+        console.log("GAME OVER");
+        return;
       }
+
+      const focusField = document.getElementById(`0,0`);
+      focusField?.focus();
     }, 500);
   }, [round]);
 
   return (
     <div className="board-box">
-      {round > 0 && round < 11 ? (
+      {round > 0 && round < 10 ? (
         <>
           <StatusBar setRound={setRound} score={score} />
           <Main
@@ -109,7 +82,12 @@ const Window: React.FC = () => {
           />
         </>
       ) : (
-        <Menu setRound={setRound} mode={mode} setMode={setMode} />
+        <>
+          <h5 className="mode-label">
+            Mode: <span className="mode-name">{mode.toUpperCase()}</span>
+          </h5>
+          <Menu setRound={setRound} mode={mode} setMode={setMode} />
+        </>
       )}
     </div>
   );
