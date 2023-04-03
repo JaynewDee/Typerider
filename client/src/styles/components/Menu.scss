@@ -8,11 +8,24 @@
   margin: auto;
   padding-top: 7%;
   padding-bottom: 7%;
+  font-family: "Syne Mono", monospace;
 }
-
 .menu-header {
   color: white;
 }
-.start-btn {
+.start-btn,
+.mode-btn,
+.quit-btn {
   border-radius: 10px;
+  margin-bottom: 0.33rem;
+  padding: 0.33rem 0.66rem;
+}
+.mode-label {
+  color: white;
+  margin-top: 0;
+  padding-top: 1rem;
+  padding-left: 3rem;
+}
+.mode-name {
+  color: rgba(0, 121, 145, 0.9);
 }

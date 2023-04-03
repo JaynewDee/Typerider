@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useCallback, useState } from "react";
+import { useReducer, useEffect, useState } from "react";
 import { timerReducer } from "../../utils/reducers";
 
 const useTimerDispatch = () => {

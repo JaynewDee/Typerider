@@ -6,14 +6,12 @@ const scoreReducer = (state: any, { type, payload }: any) => {
     case PENALTY: {
       const newScore = state.score - payload;
       return {
-        ...state,
         score: newScore,
       };
     }
     case INCREASE: {
       const newScore = state.score + payload;
       return {
-        ...state,
         score: newScore,
       };
     }
@@ -32,6 +30,6 @@ const timerReducer = (state: any, { type }: any) => {
 };
 
 export { timerReducer };
-export function useScoreReducer(initialState: number) {
+export function useScoreReducer(initialState: { score: number }) {
   return useReducer(scoreReducer, initialState);
 }

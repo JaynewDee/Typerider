@@ -30,16 +30,11 @@ function rejoinWords(newStrings: string[], inserts: Insert[]) {
   return pieces;
 }
 
-// main control flow
 const scrambleWords = (sentence: string): string => {
   const shorts: Insert[] = [];
-  const wordArray = sentence.split(" ");
-  if (wordArray.length > 5) {
-    throw new Error(
-      `Input sentence contains more than 5 words.  Something went wrong @ SentenceComponent -> useEffect -> getData -> scrambleWords ... {Keyword}: [Length]`
-    );
-  }
-  // split any word greater than 3 characterss into nested array,
+  let wordArray = sentence.split(" ").slice(0, 10);
+
+  // split any word greater than 3 characters into nested array,
   // push any shorter words to dictionary/map
   const splitWords = wordArray.map((word: string, idx: number) => {
     if (word.length > 3) {

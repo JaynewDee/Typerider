@@ -2,18 +2,23 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column nowrap;
-  letter-spacing: 0.2rem;
-  margin: auto;
+  flex-flow: row wrap;
+  position: sticky;
+  top: 3rem;
+  max-width: 66%;
+  margin-top: 2rem;
+  z-index: 3;
 }
+
 header > * {
   padding-bottom: 1rem;
 }
 header > h1 {
+  max-width: 100%;
   color: white;
-  font-size: 2rem;
+  font-size: 1.33rem;
+  text-align: center;
   padding-bottom: 1rem;
-  padding-top: 3rem;
 }
 header > h4 {
   color: rgba(0, 0, 0, 0.9);

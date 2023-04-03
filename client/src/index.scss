@@ -3,8 +3,10 @@
 @use "./styles/components/Header.scss";
 @use "./styles/components/Keyboard.scss";
 @use "./styles/components//Menu.scss";
+@use "./styles/components//Footer.scss";
 @import "./styles/reset.scss";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
 
 body {
   margin: 0;
@@ -21,13 +23,14 @@ code {
 }
 
 // global
-$font-main: "Open Sans", sans-serif;
+$font-main: "Syne Mono", monospace;
 $bg: rgba(15, 15, 15, 0.6);
 $correct: #4caf50;
 $space: #ffb74d;
 $btn: #388e3c;
 
 :root {
+  min-height: 100vh;
   font-size: 2.2vw;
   margin: 0;
 }
@@ -35,13 +38,29 @@ html,
 body {
   margin: 0;
   background: $bg;
+  width: 100%;
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgba(15, 15, 15, 0.3);
+  color: white;
 }
 .App {
+  min-height: 100vh;
   box-sizing: border-box;
   font-family: $font-main;
-  border-radius: 2%;
   filter: drop-shadow(0px 0px 15px rgba(25, 25, 25, 0.9));
 }
+.game-title {
+  color: rgba(230, 230, 230, 0.7);
+  text-align: right;
+  margin-right: 3rem;
+}
 .board-box {
-  margin-top: 1rem;
+}
+.play-field {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
 }

@@ -4,10 +4,11 @@ import { HeaderProps } from "./types";
 
 const Header: React.FC<HeaderProps> = ({ sentence }) => {
   return (
-    <header>
+    <header className="sentence-box">
       <h1>{sentence.scrambled}</h1>
     </header>
   );
 };
 
-export { Header };
+const HeaderMemo = React.memo(Header);
+export { HeaderMemo };
